@@ -1,5 +1,11 @@
 import { fetchDataFromFile } from './inject.js';
 
+/**
+ * Creates a nav menu based on the provided data.
+ *
+ * @param {Object} navData - The navigation data containing cities information.
+ * @return {void}
+ */
 function createNavigationMenu(navData) {
     const navbar = document.getElementById('nav-list');
 
@@ -17,6 +23,11 @@ function createNavigationMenu(navData) {
     }
 }
 
+/**
+ * Animates the slider based on the nav item click and window resize events.
+ *
+ * @return {void}
+ */
 function animateSlider() {
     const navItems = document.querySelector('#nav-list');
 
@@ -29,10 +40,8 @@ function animateSlider() {
            if (isActive) isActive.classList.remove('active');
 
            event.target.classList.add('active');
-
            navBar.style.setProperty('--underline-width', `${event.target.offsetWidth}px`);
            navBar.style.setProperty('--underline-offset-x', `${event.target.offsetLeft}px`);
-
        }
     });
 
@@ -42,7 +51,6 @@ function animateSlider() {
 
         navBar.style.setProperty('--underline-width', `${isActive.offsetWidth}px`);
         navBar.style.setProperty('--underline-offset-x', `${isActive.offsetLeft}px`);
-
     });
 }
 

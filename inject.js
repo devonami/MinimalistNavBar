@@ -1,3 +1,11 @@
+/**
+ * Fetches JSON data from a specified file path.
+ *
+ * @param {string} filePath - The relative path to the file from which to fetch data.
+ * @return {Promise<object>} The parsed JSON object from the file.
+ *
+ * @throws string WIll throw an error if the fetch operation fails or if the response is not ok.
+ */
 async function fetchDataFromFile(filePath) {
     try {
         const currentDir = getCurrentDirectory();
@@ -10,6 +18,11 @@ async function fetchDataFromFile(filePath) {
     }
 }
 
+/**
+ * Retrieves the current directory from the browser's URL.
+ *
+ * @return {string} The current directory path ending with a slash.
+ */
 function getCurrentDirectory() {
     const url = window.location.href;
     return url.substring(0, url.lastIndexOf('/')) + '/';

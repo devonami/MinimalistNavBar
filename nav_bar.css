@@ -1,14 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 :root {
     --color-bg: #fff;
     --color-text: #000000;
     --color-underline-highlight: #353535;
     --color-underline: #b6b6b6;
+    --color-hover-link: #007AFF;
 }
 
 body {
-    font-family: "Oswald", sans-serif;
+    font-family: "Open Sans", sans-serif;
     background-color: var(--color-bg);
 }
 
@@ -16,7 +17,15 @@ a {
     color: var(--color-underline);
 }
 
+a:hover {
+    color: var(--color-hover-link);
+}
+
 .active {
+    color: var(--color-underline-highlight);
+}
+
+.active:hover {
     color: var(--color-underline-highlight);
 }
 
@@ -52,7 +61,12 @@ nav::before {
 
 .nav-link {
     display: block;
-    padding: 0.5rem 1rem;
+    padding:  1rem 0 0.5rem;
     font-size: 1rem;
     text-decoration: none;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
 }
