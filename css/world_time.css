@@ -1,0 +1,10 @@
+#time {
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+#world-time {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}

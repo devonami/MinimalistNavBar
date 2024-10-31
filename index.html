@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Critical Mass Nav Bar Coding Challenge</title>
-    <link rel="stylesheet" href="nav_bar.css"/>
-    <script defer type="module" src="inject.js"></script>
-    <script type="module" src="nav_bar.js"></script>
+    <link rel="stylesheet" href="css/nav_bar.css"/>
+    <link rel="stylesheet" href="css/world_time.css"/>
+    <script defer type="module" src="scripts/inject.js"></script>
+    <script type="module" src="scripts/world_time.js"></script>
+    <script type="module" src="scripts/nav_bar.js"></script>
 </head>
 <body>
 
@@ -17,10 +19,9 @@
 </header>
 
 <main>
-    <h1>Welcome to my coding test!</h1>
-    <p>The nav bar above is to spec, as per the included .mov file.</p>
-    <p>I've also included a mock fetch for the file in 'inject.js' to simulate an API call to get the data.</p>
-    <p>Please play around, let me know what you think!</p>
+    <div id="world-time">
+        <span id="time"></span>
+    </div>
 </main>
 
 <footer>

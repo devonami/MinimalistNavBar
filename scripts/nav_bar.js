@@ -1,4 +1,5 @@
 import { fetchDataFromFile } from './inject.js';
+import { getTimeForCity } from './world_time.js';
 
 /**
  * Creates a nav menu based on the provided data.
@@ -35,7 +36,7 @@ function animateSlider() {
 
     navItems.addEventListener('click', function(event) {
        if (event.target.classList.contains('nav-link')) {
-           console.log(event.target.offsetLeft);
+           void setTimeForLocation(event.target.textContent);
            const isActive = document.querySelector('.active');
            if (isActive) isActive.classList.remove('active');
 
@@ -54,7 +55,19 @@ function animateSlider() {
     });
 }
 
-fetchDataFromFile('navigation.json')
+/**
+ * Sets the current time for the given city name in the DOM element with the ID 'time'.
+ *
+ * @param {string} cityName - The name of the city for which to set the current time.
+ * @return {Promise<void>} Resolves once the time is set.
+ */
+async function setTimeForLocation(cityName) {
+    const datetime = await getTimeForCity(cityName);
+    const time = document.getElementById('time');
+    time.textContent = datetime;
+}
+
+fetchDataFromFile('data/navigation.json')
     .then(navData => {
         createNavigationMenu(navData);
         animateSlider();
